@@ -1,0 +1,50 @@
+body {
+    height: 100vh;
+    margin: 0;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 50px;
+}
+
+.container {
+    display: flex;
+    gap: 2px;
+    border: 2px;
+    border-color: solid brown;
+    width: 800px;
+    height: 800px;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+    gap: 2px;
+}
+
+.square {
+    gap: 10px;
+    background-color: aquamarine;
+    flex-grow: 1;
+    transition: background-color 0.2s;
+}
+
+button {
+    padding: 10px 24px;
+    font-size: 12px;
+    border-radius: 12px;
+    color: brown;
+    background-color: aquamarine;
+    flex-grow: 0;
+    border: solid brown;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
