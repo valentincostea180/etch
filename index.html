@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel='stylesheet' href='styles.css'/>
+        <title>
+            etch a sketch
+        </title>
+    </head>
+    <body>
+        <div class="left">
+            <button onclick="updateGrid()">
+                Change 
+            </button>
+            <button onclick="clearSq()">
+                Clear 
+            </button>
+        </div>
+
+        <div class="container">
+
+        </div>
+        
+        <script>
+            let num = 16;
+
+            let container = document.querySelector(".container");
+
+            function create(num) {
+                container.innerHTML = ''; 
+                for(let i = 0; i < num; i++) {
+                let row = document.createElement("div");
+                row.setAttribute("class", "row");
+
+                for(let j = 0; j < num; j++) {
+                    let square = document.createElement("div");
+                    square.setAttribute("class", "square")
+                    row.appendChild(square);
+
+                    square.addEventListener("mouseover", () => {
+                        square.style.background = "red";
+                    })
+                }
+                container.appendChild(row);
+            }
+            }
+
+
+            create(num);
+
+            function clearSq() {
+            let squares = document.querySelectorAll(".square");
+            squares.forEach(square => square.style.background = "aquamarine");
+            }
+            
+
+            function updateGrid() {
+                num = prompt("Please enter a number");
+                if (num !== null && !isNaN(num) && num > 0 && num < 101) {
+                    create(num);
+                } else {
+                    alert("Please enter a valid number between 1 and 100.");
+                }
+            }
+
+
+            
+
+        </script>
+    
+    </body>
+</html>
